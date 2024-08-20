@@ -3,10 +3,7 @@ const { json } = require('express');
 const dbconnection = require('../DB/dbConfig')
 const {StatusCodes} = require('http-status-codes');
 const { use } = require('../routes/user_routes');
-// import OpenAI from 'openai';
-// const OpenAI = require('openai')
- 
-// const openai = new OpenAI( {apiKey: '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'})
+
 const add_answer = async (req,res)=>{
     // res.send("add answer")
     const {answer,questionid} = req.body;
@@ -38,12 +35,5 @@ const get_answers = async (req,res)=>{
         
     }
 }
-// const GPT_ANS = async (req,res)=>{
-//      const completion = await openai.chat.completions.create({
-//               messages: [{ role: "user", content: "You are a helpful assistant." }],
-//               model: "gpt-3.5-turbo",
-//             });
-//             return res.status(StatusCodes.OK).json({completion})
 
-// }
 module.exports = {add_answer,get_answers}
